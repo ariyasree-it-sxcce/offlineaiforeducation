@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Nunito', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +50,33 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Educational color palette
+        edu: {
+          blue: {
+            light: "hsl(var(--edu-blue-light))",
+            DEFAULT: "hsl(var(--edu-blue))",
+            dark: "hsl(var(--edu-blue-dark))",
+          },
+          green: {
+            light: "hsl(var(--edu-green-light))",
+            DEFAULT: "hsl(var(--edu-green))",
+            dark: "hsl(var(--edu-green-dark))",
+          },
+          orange: {
+            light: "hsl(var(--edu-orange-light))",
+            DEFAULT: "hsl(var(--edu-orange))",
+          },
+          purple: {
+            light: "hsl(var(--edu-purple-light))",
+            DEFAULT: "hsl(var(--edu-purple))",
+          },
+        },
+        // RAM status colors
+        ram: {
+          low: "hsl(var(--ram-low))",
+          medium: "hsl(var(--ram-medium))",
+          high: "hsl(var(--ram-high))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,28 +92,36 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+        "4xl": "2rem",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "slide-up": {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
+        "slide-up": "slide-up 0.4s ease-out",
+      },
+      spacing: {
+        'safe': 'env(safe-area-inset-bottom, 0px)',
       },
     },
   },
